@@ -1,0 +1,169 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>TEI Structuring Magic</title>
+        <author>Thomas Kollatz </author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>TEI Consortium</publisher>
+        <availability status="free">
+          <licence target="http://creativecommons.org/licenses/by-sa/3.0/"> Distributed under a
+            Creative Commons Attribution-ShareAlike 4.0 Unported License </licence>
+          <licence target="http://www.opensource.org/licenses/BSD-2-Clause">
+            <p>Copyright 2013 TEI Consortium.</p>
+            <p>All rights reserved.</p>
+            <p>Redistribution and use in source and binary forms, with or without modification, are
+              permitted provided that the following conditions are met:</p>
+            <list>
+              <item>Redistributions of source code must retain the above copyright notice, this list
+                of conditions and the following disclaimer.</item>
+              <item>Redistributions in binary form must reproduce the above copyright notice, this
+                list of conditions and the following disclaimer in the documentation and/or other
+                materials provided with the distribution.</item>
+            </list>
+            <p>This software is provided by the copyright holders and contributors "as is" and any
+              express or implied warranties, including, but not limited to, the implied warranties
+              of merchantability and fitness for a particular purpose are disclaimed. In no event
+              shall the copyright holder or contributors be liable for any direct, indirect,
+              incidental, special, exemplary, or consequential damages (including, but not limited
+              to, procurement of substitute goods or services; loss of use, data, or profits; or
+              business interruption) however caused and on any theory of liability, whether in
+              contract, strict liability, or tort (including negligence or otherwise) arising in any
+              way out of the use of this software, even if advised of the possibility of such
+              damage.</p>
+          </licence>
+          <p>TEI material can be licensed differently depending on the use you intend to make of it.
+            Hence it is made available under both the CC+BY and BSD-2 licences. The CC+BY licence is
+            generally appropriate for usages which treat TEI content as data or documentation. The
+            BSD-2 licence is generally appropriate for usage of TEI content in a software
+            environment. For further information or clarification, please contact the <ref
+              target="mailto:info@tei-c.org">TEI Consortium</ref>. </p>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Created from scratch by Thomas Kollatz, but looking at previous tei_ tei_minimal and
+          tei_bare exemplars by SPQR, LR and JC.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <body>
+      <head>A Minimal TEI Customization for Structuring Magic</head>
+      <p>This TEI ODD defines a TEI customization that is as minimal as possible and the schema
+        generated from it will validate a document that is minimally valid against the TEI scheme.
+        It includes only the following elements: <list rend="numbered">
+          <item><gi>teiHeader</gi> from the header module to store required metadata</item>
+          <item><gi>fileDesc</gi> from the header module to record information about this
+            file</item>
+          <item><gi>titleStmt</gi> from the header module to record information about the
+            title</item>
+          <item><gi>publicationStmt</gi> from the header module to detail how it is published</item>
+          <item><gi>sourceDesc</gi> from the header module to record where it is from</item>
+          <item><gi>p</gi> from the core module for use in the header and the body</item>
+          <item><gi>seg</gi> from the core module for use in the header and the body</item>
+          <item><gi>ab</gi> from the core module for use in the header and the body</item>
+          <item><gi>rs</gi> from the core module for use in the header and the body for all kind of
+            entities</item>
+          <item><gi>title</gi> from the core module for use in the titleStmt</item>
+          <item><gi>TEI</gi> from the textstructure module because what is a TEI file without
+            that?</item>
+          <item><gi>text</gi> from the textstructure module to hold some text</item>
+          <item><gi>body</gi> from the textstructure module as a place to put that text</item>
+        </list>
+      </p>
+      <schemaSpec ident="tei_magic" start="TEI" prefix="tei_" targetLang="en" docLang="en">
+        <!-- required module tei instantiates lots of classes used for further expansion of this odd -->
+        <moduleRef n="01" key="tei"/>
+        <!-- required minimal header elements -->
+        <moduleRef n="02" key="header"
+          include="teiHeader fileDesc titleStmt publicationStmt sourceDesc"/>
+        <!-- required core elements (p and title for use in titleStmt) -->
+        <moduleRef n="03" key="core" include="p title rs lb pb cb"/>
+        <!-- required textstructure elements (TEI, text, and body) -->
+        <moduleRef n="04" key="textstructure" include="TEI text body"/>
+        <moduleRef n="16" key="linking" include="ab seg"/>
+        <moduleRef n="17" key="analysis" except="c cl interp interpGrp m pc phr s span spanGrp w"/>
+        
+        
+        <elementSpec ident="seg" mode="change">
+          <attList>
+            <attDef ident="ana" mode="change">
+              <valList type="closed" mode="change">
+                <valItem ident="voces_magicae">
+                  <desc xml:lang="en">unit or object can somehow understood as voces</desc>
+                </valItem>
+                <valItem ident="characteres">
+                  <desc/>
+                </valItem>
+                <valItem ident="formulae">
+                  <desc/>
+                </valItem>
+                <valItem ident="temporal">
+                  <desc/>
+                </valItem>
+                <valItem ident="spatial">
+                  <desc/>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="type" mode="change">
+              <valList type="closed" mode="replace">
+                <valItem ident="list">
+                  <desc xml:lang="en">sequence: any kind of lister; number of elements could be
+                    specified by <att>n</att></desc>
+                </valItem>
+                <valItem ident="formula">
+                  <desc xml:lang="en">formula: any kind of formulae</desc>
+                </valItem>
+                <valItem ident="undefined">
+                  <desc xml:lang="en">segment that is currently undefined: to be discussed</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        <elementSpec ident="rs" mode="change"><desc xml:lang="en">reference string used to encode all kind of entities (persons, places, events, terms, etc.)</desc>
+          <!-- use rs for all kind of entities -->
+          <attList>
+            <attDef ident="type" mode="change">
+              <!-- @type for unique attributions -->
+              <valList type="closed" mode="change">
+                <valItem ident="person">
+                  <desc xml:lang="en">referring to any kind of person or being (supranatural or human)</desc>
+                </valItem>
+                <valItem ident="place">
+                  <desc/>
+                </valItem>
+                <valItem ident="formula">
+                  <desc/>
+                </valItem>
+                <valItem ident="ritual_practice">
+                  <desc/>
+                </valItem>
+                <valItem ident="medium">
+                  <desc/>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        <elementSpec ident="text" mode="change">
+          <attList>
+            <attDef ident="type" mode="change">
+              <valList type="closed" mode="replace">
+                <!-- genre texttype-->
+                <valItem ident="charm">
+                  <desc xml:lang="en">the genre of the magic text can be classified as charm;
+                    optional specify with <att>subtype</att></desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        <classSpec type="atts" ident="att.lexicographic.normalized" mode="delete"/>
+        <classSpec type="atts" ident="att.linguistic" mode="delete"/>
+      </schemaSpec>
+    </body>
+  </text>
+</TEI>

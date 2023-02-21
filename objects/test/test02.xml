@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schema/tei_magic.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../schema/tei_magic.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Information about publication or distribution</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text xml:lang="he" xml:space="preserve" type="charm" subtype="EnvokeLove">
+      <body>
+         <ab>
+            <rs type="person" xml:id="A">I</rs> demand from <rs type="person" xml:id="B" corresp="#A">you</rs>, according to your promises in front of the fire, <seg type="list" ana="temporal" n="3">at once, today, right now,</seg> enter into N daughter of N as <rs type="medium">fire</rs> and as a <rs type="medium">flame</rs>, so that she will <seg n="3">neither eat, nor drink, nor get up</seg> until sees N son of N. <seg type="formula" n="2">Amen. Amen.</seg>        
+         </ab>
+      </body>
+  </text>
+</TEI>

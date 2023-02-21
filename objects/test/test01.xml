@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../../schema/tei_magic.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../../schema/tei_magic.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Information about publication or distribution</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Information about the source</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text xml:lang="he" xml:space="preserve" >
+      <body>
+         <ab>
+            <seg type="list" xml:lang="gr" ana="characteres"><lb/>(Greek letters+magic charaktéres)
+            <lb/>(Greek letters+magic charaktéres)
+            <lb/>(Greek letters+magic charaktéres)</seg>
+            <lb/>[Guar]d <rs type="person">Ada son of Marthana</rs>, <seg type="formula">Amen, Amen, Selah</seg>.
+            <lb/><seg type="list" subtype="names_divine">[In the name ofl God, the holy, our God, the God, our God, the God of hosts</seg> -
+            <lb/>[...]swr) )brtn hyd 	)brtn wb) dymnhmnws
+            <lb/>[...]t) qq ddwsh )nnwn )nwtw )ggn bryh 1b
+            <lb/>[...] 	)dwnh)  s)lm smslm
+            <lb/>[...]t )qr) m)kh mry )bln) tn)lb) 
+            <lb/>[ ] 	mrbb)l )str) qpqh - redeem
+            <lb/>[and] guard <rs type="person">Ada son of Marthana</rs> from every evil <rs>pain</rs>,
+            Amen.
+            <lb/>d[w]qwn dyqwn dyqnwn )ystrqtwn. In the name of the <rs type="person" subtype="supranatural" n="7">seven holy
+            <lb/>angels</rs> which every spirit and plague-demons are given in their hands, I adjure
+            <lb/>against a spirit that comes upon Ada son of Marthana that you shall not  harm him, that where[ever]
+            <lb/>these names will be read (any spirit) will not remain. I write (it) and (then) the fever will be eradicated.
+            <lb/><seg type="list">(magic charaktéres)</seg> pt ()
+          
+         </ab>
+      </body>
+  </text>
+</TEI>
