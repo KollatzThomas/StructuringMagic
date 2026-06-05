@@ -10,27 +10,28 @@ TEI Customazing [Schema](https://kollatzthomas.github.io/StructuringMagic/schema
 
 Firstly, this **proposal for Structuring Magic** customizes the TEI-Element `seq` – (arbitrary segment) represents any segmentation of text below the ‘chunk’ level – and defines the following two attributes: 
 * `type` characterizes the element in some sense, using any convenient classification scheme or typology. 
-    -  list i.e. sequence: any kind of lister; number of elements could be specified by n
-    - formula i.e. formula: any kind of formulae
-    - undefined i.e. segment that is currently undefined: to be discussed
+    - `list` sequence: any kind of lister; number of elements could be specified by n
+    - `formula` formula: any kind of formulae
+    - `undefined` i.e. segment that is currently undefined: to be discussed
     - … more values to be discussed and then added
 *  `ana` (analysis) indicates one or more elements containing interpretations of the element on which the ana attribute appears. 
-    -  voces_magicae: unit or object can somehow understood as voces
-    -  characteres
-    -  formulae
-    -  temporal
-    -  spatial
+    -  `voces_magicae` unit or object can somehow understood as voces
+    -  `characteres`
+    -  `formulae`
+    -  `temporal`
+    -  `spatial`
     -  … more values to be discussed and then added
+
 Secondly, the TEI-Element `rs` – (referencing string) reference string used to encode all kind of entities (persons, places, events, terms, etc.) – is customized with the following values for the attribute `type`:
-    - person i.e. referring to any kind of person or being (supranatural or human)
-    - place
-    - formula
-    - ritual_practice
-    - medium
+    - `person` referring to any kind of person or being (supranatural or human)
+    - `place`
+    - `formula`
+    - `ritual_practice`
+    - `medium`
     - … more values to be discussed and then added
     
 ### examples
-1. 
+1. [test01.xml](objects/test01.xml)
 ```xml
 <ab>
     <seg type="list" xml:lang="gr" ana="characteres"><lb/>(Greek letters+magic charaktéres)
@@ -52,7 +53,7 @@ Secondly, the TEI-Element `rs` – (referencing string) reference string used to
       <lb/><seg type="list">(magic charaktéres)</seg>         
 </ab>
 ```
-2. 
+2. [test02.xml](objects/test02.xml)
 ```xml
 <ab>
     <rs type="person" xml:id="A">I</rs> demand from <rs type="person" xml:id="B" corresp="#A">you</rs>,
@@ -141,3 +142,6 @@ so that she will <seg n="3">neither eat, nor drink, nor get up</seg> until sees 
     </attlist>
 </elementspec>
 ```
+
+## Future Steps
+This is a proposal! If projects want to use this schema in their projects in order to search for traces of magic across projects these projects should agree on features to be encoded. By doing this it will be possible to ask research questions across corpora.  
