@@ -31,7 +31,7 @@ Secondly, the TEI-Element `rs` – (referencing string) reference string used to
     - … more values to be discussed and then added
     
 ### examples
-1. [test01.xml](objects/test01.xml)
+1. [test01.xml](https://github.com/KollatzThomas/StructuringMagic/blob/main/objects/test/test01.xml)
 ```xml
 <ab>
     <seg type="list" xml:lang="gr" ana="characteres"><lb/>(Greek letters+magic charaktéres)
@@ -53,7 +53,7 @@ Secondly, the TEI-Element `rs` – (referencing string) reference string used to
       <lb/><seg type="list">(magic charaktéres)</seg>         
 </ab>
 ```
-2. [test02.xml](objects/test02.xml)
+2. [test02.xml](https://github.com/KollatzThomas/StructuringMagic/blob/main/objects/test/test02.xml)
 ```xml
 <ab>
     <rs type="person" xml:id="A">I</rs> demand from <rs type="person" xml:id="B" corresp="#A">you</rs>,
@@ -72,7 +72,8 @@ so that she will <seg n="3">neither eat, nor drink, nor get up</seg> until sees 
 <?xml-model href="[../../schema/tei_magic.rng](https://raw.githubusercontent.com/KollatzThomas/StructuringMagic/refs/heads/main/schema/tei_magic.rng)" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 ```
-2. Embed the following sequence in the ODD of your project, which specifies the `seq` and the `rs` elements: 
+2. Embed the following sequence in the ODD of your project, which specifies the `seq` and the `rs` elements:
+([tei_magic.odd](https://github.com/KollatzThomas/StructuringMagic/blob/main/schema/tei_magic.odd))
 ```xml
 <elementspec ident="seg" mode="change">
     <attlist>
