@@ -68,8 +68,8 @@ so that she will <seg n="3">neither eat, nor drink, nor get up</seg> until sees 
 1. Embed the `tei_magic.rng` in your XML-Document
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="[../../schema/tei_magic.rng](https://raw.githubusercontent.com/KollatzThomas/StructuringMagic/refs/heads/main/schema/tei_magic.rng)" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
-<?xml-model href="[../../schema/tei_magic.rng](https://raw.githubusercontent.com/KollatzThomas/StructuringMagic/refs/heads/main/schema/tei_magic.rng)" type="application/xml"
+<?xml-model href="[https://raw.githubusercontent.com/KollatzThomas/StructuringMagic/refs/heads/main/schema/tei_magic.rng](https://raw.githubusercontent.com/KollatzThomas/StructuringMagic/refs/heads/main/schema/tei_magic.rng)" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="[https://raw.githubusercontent.com/KollatzThomas/StructuringMagic/refs/heads/main/schema/tei_magic.rng](https://raw.githubusercontent.com/KollatzThomas/StructuringMagic/refs/heads/main/schema/tei_magic.rng)" type="application/xml"
 	schematypens="http://purl.oclc.org/dsdl/schematron"?>
 ```
 2. Embed the following sequence in the ODD of your project, which specifies the `seq` and the `rs` elements:
